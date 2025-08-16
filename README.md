@@ -1,49 +1,51 @@
-<!-- Banner -->
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg" width="200" alt="Australia Flag"/>
-</p>
+# 💰 Finance Tracker
 
-<!-- Title -->
-<h1 align="center">💰 Finance Tracker</h1>
-<p align="center">A simple fullstack application to track personal expenses and income.</p>
+A modern **personal finance tracking app** that helps users stay in control of their money.  
+With an intuitive dashboard, clean design, and insightful reports, Finance Tracker makes budgeting simple and effective.  
 
 ---
 
-## 📌 About the Project
+## 🚀 Why this project?
 
-The **Finance Tracker** is a Fullstack project developed to help users manage their finances by tracking incomes and expenses.  
-This project was built to improve my skills in **JavaScript, Node.js, React, MongoDB**, and **API integration**.
-
----
-
-## 🚀 Features
-- User registration and login with JWT authentication 🔑  
-- Add, edit, and delete financial transactions 💸  
-- Dashboard with balance summary 📊  
-- Integration between frontend and backend 🌐  
-- MongoDB database hosted in the cloud ☁️  
+Managing money shouldn’t be complicated.  
+This project was built to showcase my **Fullstack development skills**, including **React, Node.js, Express, and MongoDB**.  
 
 ---
 
-## 🛠️ Technologies
+## ✨ Key Highlights
 
-### Backend
-- Node.js  
-- Express.js  
-- MongoDB + Mongoose  
-- JWT Authentication  
-- Bcrypt.js (password encryption)  
-
-### Frontend
-- HTML5 / CSS3  
-- JavaScript (Vanilla)  
-- Future improvement: React.js  
-
-### Tools
-- VS Code  
-- Git & GitHub  
-- Postman (API testing)  
+- 📊 Interactive dashboard with spending insights  
+- 🔐 Secure authentication (JWT)  
+- 💵 Track incomes and expenses by category  
+- 📱 Fully responsive design  
+- ⚡ Fast and optimized with modern technologies  
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js  
+- **Backend:** Node.js + Express.js  
+- **Database:** MongoDB  
+- **Extras:** Chart.js (data visualization), JWT Authentication  
+
+---
+
+
+
+---
+
+## 👨‍💻 About the Developer
+
+Hi! I’m **Gabriel Reis**, a **Fullstack Developer** with a background in Computer Networks.  
+I enjoy building modern, scalable applications and constantly improving my skills in **JavaScript, React, and Node.js**.  
+
+---
+
+## 📬 Contact
+
+- 🌐 [LinkedIn](https://www.linkedin.com/in/gabriel-de-oliveira-reis-9bb315377?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B43EuUqaqSMyFLhlWNbmxUA%3D%3D) *(add your profile link here)*  
+- 📧 gabriellzinho@icloud.com *(replace with your real email)*  
+- 💻 [GitHub](https://github.com/GabriellPRO)  
+
+---
