@@ -1,17 +1,103 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Corpo centralizado com fundo agradável */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f4f4f4;
-}
-
-form {
   display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-align: center;
 }
 
-input, button {
-  padding: 10px;
-  margin: 5px;
+/* Container central */
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Título */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h1 span {
+  color: #ffd700;
+}
+
+/* Parágrafo */
+p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+}
+
+/* Botões */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+/* Botão de Register */
+.btn.register {
+  background-color: #28a745;
+}
+
+.btn.register:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Botão de Login */
+.btn.login {
+  background-color: #007bff;
+}
+
+.btn.login:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Inputs do formulário */
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Botões já existem com .btn e .login */
+
+/* Link de registro */
+.link {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
