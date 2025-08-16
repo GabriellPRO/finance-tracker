@@ -44,8 +44,8 @@ I enjoy building modern, scalable applications and constantly improving my skill
 
 ## 📬 Contact
 
-- 🌐 [LinkedIn](https://www.linkedin.com/in/gabriel-de-oliveira-reis-9bb315377?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B43EuUqaqSMyFLhlWNbmxUA%3D%3D) *(add your profile link here)*  
-- 📧 gabriellzinho@icloud.com *(replace with your real email)*  
+- 🌐 [LinkedIn](https://www.linkedin.com/in/gabriel-de-oliveira-reis-9bb315377?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B43EuUqaqSMyFLhlWNbmxUA%3D%3D)   
+- 📧 gabriellzinho@icloud.com
 - 💻 [GitHub](https://github.com/GabriellPRO)  
 
 ---
