@@ -3,23 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Finance Tracker</title>
+  <title>Finance Tracker - Registro</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h2>Create an Account</h2>
-    <form id="registerForm" class="form">
-      <input type="text" placeholder="Name" id="name" required class="input-field">
-      <input type="email" placeholder="Email" id="email" required class="input-field">
-      <input type="password" placeholder="Password" id="password" required class="input-field">
-      <button type="submit" class="btn register">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html" class="link">Login here</a></p>
+    <div class="login-card">
+      <h1>Registrar-se</h1>
+      <form id="registerForm">
+        <input type="text" id="name" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit">Registrar</button>
+      </form>
+      <p class="register-link">
+        Já tem conta? <a href="index.html">Entrar</a>
+      </p>
+    </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
+
+
 

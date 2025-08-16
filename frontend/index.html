@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finance Tracker</title>
+  <title>Finance Tracker - Login</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to <span>Finance Tracker 💰</span></h1>
-    <p>Manage your finances easily and keep track of your spending!</p>
-    <div class="buttons">
-      <a class="btn register" href="register.html">Register</a>
-      <a class="btn login" href="login.html">Login</a>
+    <div class="login-card">
+      <h1>Finance Tracker</h1>
+      <p class="subtitle">Controle suas finanças de forma simples e rápida</p>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <p class="register-link">
+        Não tem conta? <a href="register.html">Registre-se</a>
+      </p>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
 

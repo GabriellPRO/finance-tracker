@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="dashboard-container">
+    <h1>Bem-vindo, <span id="welcome"></span>!</h1>
+
+    <!-- Adicionar gasto -->
+    <div class="add-expense">
+      <input type="text" id="expenseName" placeholder="Nome do gasto">
+      <input type="number" id="expenseAmount" placeholder="Valor (R$)">
+      <button id="addExpenseBtn">Adicionar</button>
+    </div>
+
+    <!-- Lista de gastos -->
+    <ul id="expensesList"></ul>
+
+    <!-- Gráfico de despesas -->
+    <canvas id="expensesChart" width="400" height="200"></canvas>
+
+    <button id="logoutBtn">Sair</button>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
+
+
+

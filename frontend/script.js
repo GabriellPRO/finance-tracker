@@ -1,4 +1,6 @@
-// Registro de usuário
+const backendURL = 'http://localhost:5000/api/auth';
+
+// Registro
 const registerForm = document.getElementById('registerForm');
 if (registerForm) {
   registerForm.addEventListener('submit', async (e) => {
@@ -7,18 +9,18 @@ if (registerForm) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const res = await fetch('http://localhost:5000/api/auth/register', {
+    const res = await fetch(`${backendURL}/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password })
     });
-
     const data = await res.json();
-    alert(data.message || 'User registered successfully!');
+    alert(data.message);
+    if (res.status === 201) window.location.href = 'index.html';
   });
 }
 
-// Login de usuário
+// Login
 const loginForm = document.getElementById('loginForm');
 if (loginForm) {
   loginForm.addEventListener('submit', async (e) => {
@@ -26,19 +28,22 @@ if (loginForm) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const res = await fetch('http://localhost:5000/api/auth/login', {
+    const res = await fetch(`${backendURL}/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
     });
-
     const data = await res.json();
-    if (data.token) {
+    alert(data.message);
+    if (res.ok) {
       localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
       window.location.href = 'dashboard.html';
-    } else {
-      alert(data.message || 'Login failed!');
     }
   });
 }
+
+
+
+
 
