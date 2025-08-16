@@ -1,9 +1,7 @@
 // Mostrar nome do usuário
 const welcome = document.getElementById('welcome');
 const user = JSON.parse(localStorage.getItem('user'));
-if (welcome && user) {
-  welcome.textContent = user.name;
-}
+if (welcome && user) welcome.textContent = user.name;
 
 // Gastos
 let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
@@ -71,3 +69,4 @@ logoutBtn.addEventListener('click', () => {
 
 // Inicializar
 updateDashboard();
+
