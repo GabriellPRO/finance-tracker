@@ -1,71 +1,89 @@
-// Mostrar nome do usuário
-const welcome = document.getElementById('welcome');
+// Dashboard.js
+
+// Pegar usuário logado
 const user = JSON.parse(localStorage.getItem('user'));
-if (welcome && user) welcome.textContent = user.name;
-
-// Gastos
-let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
-
-const expensesList = document.getElementById('expensesList');
-const expenseName = document.getElementById('expenseName');
-const expenseAmount = document.getElementById('expenseAmount');
-const addExpenseBtn = document.getElementById('addExpenseBtn');
-const logoutBtn = document.getElementById('logoutBtn');
-
-function updateDashboard() {
-  expensesList.innerHTML = '';
-  expenses.forEach((exp, index) => {
-    const li = document.createElement('li');
-    li.textContent = `${exp.name}: R$ ${exp.amount.toFixed(2)}`;
-    const delBtn = document.createElement('button');
-    delBtn.textContent = '❌';
-    delBtn.addEventListener('click', () => {
-      expenses.splice(index, 1);
-      localStorage.setItem('expenses', JSON.stringify(expenses));
-      updateDashboard();
-    });
-    li.appendChild(delBtn);
-    expensesList.appendChild(li);
-  });
-
-  const ctx = document.getElementById('expensesChart').getContext('2d');
-  if (window.expChart) window.expChart.destroy();
-  window.expChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: expenses.map(e => e.name),
-      datasets: [{
-        label: 'Despesas',
-        data: expenses.map(e => e.amount),
-        backgroundColor: expenses.map(() => `hsl(${Math.random()*360},70%,60%)`)
-      }]
-    },
-    options: { plugins: { legend: { position: 'bottom' } } }
-  });
+if (user) {
+  document.getElementById('welcome').textContent = `Bem-vindo, ${user.name}!`;
 }
 
-// Adicionar gasto
-addExpenseBtn.addEventListener('click', () => {
-  const name = expenseName.value.trim();
-  const amount = parseFloat(expenseAmount.value);
-  if (!name || isNaN(amount) || amount <= 0) {
-    alert('Preencha corretamente o nome e valor do gasto!');
-    return;
-  }
-  expenses.push({ name, amount });
-  localStorage.setItem('expenses', JSON.stringify(expenses));
-  expenseName.value = '';
-  expenseAmount.value = '';
+// Lista de transações
+let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+// Função para atualizar lista e saldo
+function updateDashboard() {
+  const listEl = document.getElementById('transactionsList');
+  const balanceEl = document.getElementById('totalBalance');
+  listEl.innerHTML = '';
+
+  let total = 0;
+
+  transactions.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.textContent = `${t.type === 'income' ? '+' : '-'} $${t.amount} | ${t.desc}`;
+    listEl.appendChild(li);
+
+    total += t.type === 'income' ? parseFloat(t.amount) : -parseFloat(t.amount);
+  });
+
+  balanceEl.textContent = `$${total.toFixed(2)}`;
+
+  // Atualizar gráfico
+  updateChart();
+}
+
+// Adicionar transação
+document.getElementById('addTransactionBtn').addEventListener('click', () => {
+  const desc = document.getElementById('desc').value;
+  const amount = document.getElementById('amount').value;
+  const type = document.getElementById('type').value;
+
+  if (!desc || !amount) return alert('Preencha todos os campos');
+
+  transactions.push({ desc, amount, type });
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+
+  document.getElementById('desc').value = '';
+  document.getElementById('amount').value = '';
+
   updateDashboard();
 });
 
 // Logout
-logoutBtn.addEventListener('click', () => {
+document.getElementById('logoutBtn').addEventListener('click', () => {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
-  localStorage.removeItem('expenses');
   window.location.href = 'index.html';
 });
+
+// Gráfico usando Chart.js
+let ctx = document.getElementById('financeChart').getContext('2d');
+let financeChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [],
+    datasets: [{
+      label: 'Gastos e Receitas',
+      data: [],
+      backgroundColor: [],
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true } }
+  }
+});
+
+function updateChart() {
+  const labels = transactions.map((t, i) => t.desc);
+  const data = transactions.map((t) => t.type === 'income' ? t.amount : -t.amount);
+  const bgColor = transactions.map((t) => t.type === 'income' ? 'green' : 'red');
+
+  financeChart.data.labels = labels;
+  financeChart.data.datasets[0].data = data;
+  financeChart.data.datasets[0].backgroundColor = bgColor;
+  financeChart.update();
+}
 
 // Inicializar
 updateDashboard();

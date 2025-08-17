@@ -1,30 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Finance Tracker</title>
+  <title>Finance Tracker - Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div id="dashboard-container">
-    <h1>Bem-vindo, <span id="welcome"></span>!</h1>
+  <div class="container">
+    <h1 id="welcome">Bem-vindo!</h1>
 
-    <div class="add-expense">
-      <input type="text" id="expenseName" placeholder="Nome do gasto">
-      <input type="number" id="expenseAmount" placeholder="Valor (R$)">
-      <button id="addExpenseBtn">Adicionar</button>
+    <!-- Saldo total -->
+    <div class="balance">
+      <h2>Saldo Total:</h2>
+      <p id="totalBalance">$0.00</p>
     </div>
 
-    <ul id="expensesList"></ul>
-    <canvas id="expensesChart" width="400" height="200"></canvas>
+    <!-- Gráfico -->
+    <canvas id="financeChart" width="400" height="200"></canvas>
+
+    <!-- Lista de transações -->
+    <div class="transactions">
+      <h3>Transações</h3>
+      <ul id="transactionsList"></ul>
+    </div>
+
+    <!-- Adicionar nova transação -->
+    <div class="add-transaction">
+      <h3>Adicionar Transação</h3>
+      <input type="text" id="desc" placeholder="Descrição" required>
+      <input type="number" id="amount" placeholder="Valor" required>
+      <select id="type">
+        <option value="income">Receita</option>
+        <option value="expense">Despesa</option>
+      </select>
+      <button id="addTransactionBtn">Adicionar</button>
+    </div>
+
     <button id="logoutBtn">Sair</button>
   </div>
 
+  <script src="script.js"></script>
   <script src="dashboard.js"></script>
 </body>
 </html>
+
 
 
 

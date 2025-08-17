@@ -1,162 +1,116 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: #121212;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  background: url('images/australia-flag.jpg') no-repeat center center/cover;
+  position: relative;
 }
 
-/* Containers */
-.container, #dashboard-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 2rem;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
-/* Cards e Dashboard */
-.login-card, #dashboard-container {
-  background: #1f1f1f;
-  padding: 3rem 2.5rem;
-  border-radius: 16px;
-  width: 400px;
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(20, 20, 20, 0.85);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.login-card:hover, #dashboard-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-}
-
-/* Títulos */
-.login-card h1, #dashboard-container h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #00bfff;
-}
-
-.subtitle {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #ccc;
-}
-
-/* Inputs */
-input {
-  width: 100%;
-  padding: 0.9rem;
-  margin-bottom: 1rem;
-  border: 1px solid #333;
-  border-radius: 8px;
-  background: #2c2c2c;
   color: #fff;
-  font-size: 1rem;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #00bcd4;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input::placeholder {
+  color: #aaa;
 }
 
 input:focus {
-  outline: 2px solid #00bfff;
+  background: #333;
+  border: 1px solid #00bcd4;
 }
 
-/* Botões */
 button {
-  width: 100%;
-  padding: 0.9rem;
+  background: linear-gradient(90deg, #00bcd4, #007b9e);
+  color: #fff;
+  padding: 14px;
   border: none;
   border-radius: 8px;
-  background-color: #00bfff;
-  color: #fff;
-  font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 button:hover {
-  background-color: #009acd;
-  transform: translateY(-2px);
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
-/* Links */
-.register-link {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-}
-
-.register-link a {
-  color: #ff8c00;
+a {
+  margin-top: 15px;
+  display: inline-block;
+  color: #00bcd4;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 14px;
 }
 
-.register-link a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-/* Dashboard específico */
-#dashboard-container {
-  margin: 2rem auto;
+/* Dashboard */
+#welcome {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.add-expense {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+#logoutBtn {
+  background: #ff4d4d;
+  color: #fff;
 }
 
-.add-expense input {
-  flex: 1;
-}
-
-#expensesList {
-  list-style: none;
-  margin-bottom: 1rem;
-  text-align: left;
-  max-height: 250px;
-  overflow-y: auto;
-}
-
-#expensesList li {
-  background: #2c2c2c;
-  padding: 0.6rem;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 500;
-}
-
-#expensesList li button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #ff4c4c;
-  font-size: 1rem;
-}
-
-/* Responsivo */
-@media (max-width: 450px) {
-  .login-card, #dashboard-container {
-    width: 90%;
-    padding: 2rem;
-  }
-
-  .add-expense {
-    flex-direction: column;
-  }
-}
 
 
 
